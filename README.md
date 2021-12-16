@@ -1,7 +1,7 @@
 # my-visualization-function
 It is a repository that stores functions for visualization.
 
-- my-decision-function
+my-decision-function  
 https://github.com/tomohiko9090/my-decision-function 
 
 1. hisfrequency_distributiontogram

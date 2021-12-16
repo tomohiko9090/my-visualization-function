@@ -2,7 +2,8 @@
 It is a repository that stores functions for visualization.
 
 《my-decision-function》  
-https://github.com/tomohiko9090/my-decision-function 
+https://github.com/tomohiko9090/my-decision-function  
+<br>
 
 1. hisfrequency_distributiontogram
     - 累積分布を可視化

@@ -6,12 +6,12 @@ https://github.com/tomohiko9090/my-decision-function
 <br>
 color variation  
 ```
-青 #8FB3BB
-緑 #A5CA95
-黄 #F5DA84
-橙 #F0BD87
-赤 #E06766
-茶 #C97865
+blue   #8FB3BB
+green  #A5CA95
+yellow #F5DA84
+orange #F0BD87
+red    #E06766
+brown  #C97865
 ```
 
 1. hisfrequency_distributiontogram

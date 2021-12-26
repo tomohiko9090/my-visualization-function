@@ -1,6 +1,16 @@
-# 新しい方
 def hisfrequency_distributiontogram(dataset, bins:int, xlabel:str, ylabel:str, histogram_color:str, line_color:str, histgram_flame=False):
 
+  '''
+  input:
+    dataset: ヒストグラムと累積分布に使用する1次元のデータセット
+    bins: ビンの区切り方
+    xlabel, ylabel: ラベル
+    histogram_color, line_color: 各分布の色設定　
+    histgram_flame: ヒストグラムに黒い枠をつけるか否か
+  output:
+    hisfrequency distributiontogram graph
+  '''
+  
   # 1. ヒスグラムの作成
   fig = plt.figure(figsize=(4,2.5), dpi=200)
   ax = fig.add_subplot(1, 1, 1)

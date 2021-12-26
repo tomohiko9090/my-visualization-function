@@ -1,11 +1,16 @@
-def two_variables_distribution(x, y, scatter_or_bar, title:str, x_label:str, y_label:str, color=False, x_lim=False, y_lim=False, x_log=False, y_log=False):
+def two_variables_distribution(x, y, scatter_or_bar, title:str, x_label:str, y_label:str, color=False, x_lim=False, y_lim=False, x_log=False, y_log=False, grid=False):
     '''
     <散布図か棒グラフを作成する関数>
     input:
+      必ず書くもの
         x, y: リストまたはSeries
-        color: 色
+        scatter_or_bar: どちらかを選択
         title, x_label, y_label: 散布図のラベル名
+      以下かかなくても良いもの
+        color: ドットの色変更
         x_log, y_log: 対数を取りたい場合"True"を入力
+        grid: グリッドを使用するか否か
+        
     output:
         2変数関連分布
     '''
@@ -24,8 +29,9 @@ def two_variables_distribution(x, y, scatter_or_bar, title:str, x_label:str, y_l
     ax.set_title(title)
     ax.set_xlabel(x_label)
     ax.set_ylabel(y_label)
-    ax.grid(True)
-    ax.set_axisbelow(True)
+    if grid:
+        ax.grid(True)
+        ax.set_axisbelow(True)
     
     ax.tick_params(left=True, labelsize=6)
     gray = "#CDCCC9"

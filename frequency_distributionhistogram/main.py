@@ -1,9 +1,12 @@
-def hisfrequency_distributiontogram(dataset, bins:int, xlabel:str, ylabel:str, histogram_color:str, line_color:str):
+# 新しい方
+def hisfrequency_distributiontogram(dataset, bins:int, xlabel:str, ylabel:str, histogram_color:str, line_color:str, histgram_flame=False):
 
   # 1. ヒスグラムの作成
   fig = plt.figure(figsize=(4,2.5), dpi=200)
   ax = fig.add_subplot(1, 1, 1)
-  ax.hist(dataset, bins=bins, label="number of people", color=histogram_color, histtype='barstacked', ec='white')
+  ax.hist(dataset, bins=bins, label="number of people", color=histogram_color, histtype='barstacked')
+  if histgram_flame:
+    ax.hist(dataset, bins=bins, label="number of people", color=histogram_color, histtype='barstacked', ec='white')
   ax.set_xlabel(xlabel, fontsize=6)
   ax.legend(bbox_to_anchor=(0, 1.1), loc='upper left', fontsize=6, frameon=False)
   ax.tick_params(left=True, labelsize=6)

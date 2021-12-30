@@ -1,4 +1,4 @@
-def hisfrequency_distributiontogram(dataset, bins:int, xlabel:str, ylabel:str, histogram_color:str, line_color:str, histgram_flame=False):
+def histogram_distribution(dataset, bins:int, xlabel:str, ylabel:str, histogram_color:str, line_color:str, histgram_flame=False):
 
   '''
   input:

@@ -14,7 +14,7 @@ red    #E06766
 brown  #C97865
 ```
 
-1. frequency_distributionhistogram 
+1. histogram_distribution 
     - 累積分布を可視化する関数
     - <img width="914" alt="スクリーンショット 0003-12-26 午前9 29 46" src="https://user-images.githubusercontent.com/66200485/147396050-43322b6e-f009-4c8c-9bb2-1bd72d40f4ed.png">
    

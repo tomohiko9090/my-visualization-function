@@ -22,4 +22,8 @@ brown  #C97865
     - 2変数関連分布を可視化する関数
     -  <img width="810" alt="スクリーンショット 0003-12-26 午前9 08 17" src="https://user-images.githubusercontent.com/66200485/147395835-d7e3d624-6bd5-4142-aea6-669f57b13c23.png">
 
+3. ExtremeModificationSeabon
+    - Seabornを改造して、相関一覧を作成するクラス
+    - 
+
 

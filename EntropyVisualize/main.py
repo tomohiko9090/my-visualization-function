@@ -1,12 +1,14 @@
 class EntropyVisualize:
 
-  def __init__(self, dataset, x_colume_name, y_colume_name, z_colume_name, xlabel, ylabel, xlim=False, ylim=False):
+  def __init__(self, dataset, x_colume_name, y_colume_name, z_colume_name, xlabel, ylabel, zlabel=False, xlim=False, ylim=False):
     self.entropy_data = dataset[dataset['mention_entropy'].isnull() == False]
     self.x_colume_name = x_colume_name
     self.y_colume_name = y_colume_name
     self.z_colume_name = z_colume_name
     self.xlabel = xlabel
     self.ylabel = ylabel
+    if zlabel:
+      self.zlabel = zlabel   
     self.xlim = xlim
     self.ylim = ylim
 
@@ -24,8 +26,7 @@ class EntropyVisualize:
     # fig.colorbar(mappable, orientation='horizontal') #ax=ax, , ticks=[0, 0.5, ]
   
     ax.scatter(x, y, color="#00000000", label=f'sample num={len(y)}\nx mean={round(x.mean(), 2)}\ny mean={round(y.mean(), 2)}\npearson corr : {str(round(result[0], 2))}\np-value={round(result[1], 3)}')
-    ax.set_title("Mention Entropy × Questionnaire Distribution")
-    ax.set_xlabel("Mention Entropy")
+    ax.set_xlabel(self.zlabel)
     ax.set_ylabel(self.ylabel)
     ax.legend(loc='lower left', fontsize=8, frameon=False, bbox_to_anchor=(-0.07, 0))
     
@@ -129,7 +130,7 @@ class EntropyVisualize:
     result = pearsonr(x, y)
 
     cmap = plt.get_cmap('coolwarm')
-    ax1.scatter(x, y, s=50, c=z, cmap=cmap, vmin=self.vmin, vmax=self.vmax)
+    
     ax1.scatter(x, y, color="#00000000", label=f'sample num={len(y)}\nx mean={round(x.mean(), 2)}\ny mean={round(y.mean(), 2)}\npearson corr : {str(round(result[0], 2))}\np-value={round(result[1], 3)}')
     ax1.axhline(y.mean(), color='#797979', linestyle='dashed', linewidth=3)    
     ax1.set_title(f'Mention Entropy ≧ {round(z_threshold, 2)}：Uniformity Mention', fontsize=20)

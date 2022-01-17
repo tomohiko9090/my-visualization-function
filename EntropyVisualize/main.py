@@ -130,7 +130,7 @@ class EntropyVisualize:
     result = pearsonr(x, y)
 
     cmap = plt.get_cmap('coolwarm')
-    
+    ax1.scatter(x, y, s=50, c=z, cmap=cmap, vmin=self.vmin, vmax=self.vmax)
     ax1.scatter(x, y, color="#00000000", label=f'sample num={len(y)}\nx mean={round(x.mean(), 2)}\ny mean={round(y.mean(), 2)}\npearson corr : {str(round(result[0], 2))}\np-value={round(result[1], 3)}')
     ax1.axhline(y.mean(), color='#797979', linestyle='dashed', linewidth=3)    
     ax1.set_title(f'Mention Entropy ≧ {round(z_threshold, 2)}：Uniformity Mention', fontsize=20)

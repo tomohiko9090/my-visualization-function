@@ -1,4 +1,4 @@
-def histogram_distribution(dataset, bins:int, xlabel:str, ylabel:str, histogram_color:str, line_color:str, histgram_flame=False):
+def histogram_distribution(dataset, bins:int, xlabel:str, ylabel:str, histogram_color:str, line_color:str, statistics_x:int=False, statistics_y:int=False):
 
   '''
   input:
@@ -6,7 +6,6 @@ def histogram_distribution(dataset, bins:int, xlabel:str, ylabel:str, histogram_
     bins: ビンの区切り方
     xlabel, ylabel: ラベル
     histogram_color, line_color: 各分布の色設定　
-    histgram_flame: ヒストグラムに黒い枠をつけるか否か
   output:
     hisfrequency distributiontogram graph
   '''
@@ -14,12 +13,14 @@ def histogram_distribution(dataset, bins:int, xlabel:str, ylabel:str, histogram_
   # 1. ヒスグラムの作成
   fig = plt.figure(figsize=(4,2.5), dpi=200)
   ax = fig.add_subplot(1, 1, 1)
-  ax.hist(dataset, bins=bins, label="number of people", color=histogram_color, histtype='barstacked')
-  if histgram_flame:
-    ax.hist(dataset, bins=bins, label="number of people", color=histogram_color, histtype='barstacked', ec='white')
+  ax.hist(dataset, bins=bins, label="number of people", color=histogram_color, histtype='barstacked', range=(1, 4))
   ax.set_xlabel(xlabel, fontsize=6)
   ax.legend(bbox_to_anchor=(0, 1.1), loc='upper left', fontsize=6, frameon=False)
-  ax.tick_params(left=True, labelsize=6)
+  ax.tick_params(right=True, labelsize=6)
+
+  # 3. 基礎統計
+  if statistics_x:
+    ax.text(statistics_x , statistics_y, s=f'sample num={len(dataset)}\nmean={round(dataset.mean(), 2)}\nmedian={round(dataset.median(), 2)}\nsigma={round(dataset.std(), 2)}', fontsize=6)
 
   # 2. 累積分布の作成
   ax = ax.twinx()
@@ -30,11 +31,11 @@ def histogram_distribution(dataset, bins:int, xlabel:str, ylabel:str, histogram_
   ax.set_ylabel(ylabel, fontsize=6)
   ax.tick_params(right=True, labelsize=6)
 
-  # 3. 詳細設定
   gray = "#CDCCC9"
   ax.spines['left'].set_color(gray)
   ax.spines['right'].set_color(gray)
   ax.spines['top'].set_color(gray)
   ax.spines['bottom'].set_color(gray)
+  
   print(f"サンプルサイズ: {N}")
   plt.show()

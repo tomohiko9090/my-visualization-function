@@ -13,7 +13,7 @@ def histogram_distribution(dataset, bins:int, xlabel:str, ylabel:str, histogram_
   # 1. ヒスグラムの作成
   fig = plt.figure(figsize=(4,2.5), dpi=200)
   ax = fig.add_subplot(1, 1, 1)
-  ax.hist(dataset, bins=bins, label="number of people", color=histogram_color, histtype='barstacked', range=(1, 4))
+  ax.hist(dataset, bins=bins, label="Number of People", color=histogram_color, histtype='barstacked') # , range=(1, 4)
   ax.set_xlabel(xlabel, fontsize=6)
   ax.legend(bbox_to_anchor=(0, 1.1), loc='upper left', fontsize=6, frameon=False)
   ax.tick_params(right=True, labelsize=6)

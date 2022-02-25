@@ -16,7 +16,7 @@ brown  #C97865
 
 1. histogram_distribution 
     - 累積分布を可視化する関数
-    - <img width="914" alt="スクリーンショット 0003-12-26 午前9 29 46" src="https://user-images.githubusercontent.com/66200485/147396050-43322b6e-f009-4c8c-9bb2-1bd72d40f4ed.png">
+    - ![general_trust](https://user-images.githubusercontent.com/66200485/155669853-c19698d2-154d-4de6-9bce-cf6534d393ac.png)
    
 2. two_variables_distribution
     - 2変数関連分布を可視化する関数
